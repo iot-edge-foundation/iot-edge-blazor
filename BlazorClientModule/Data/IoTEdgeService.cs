@@ -18,7 +18,7 @@ namespace BlazorEdgeModule.Edge
         {
             Console.WriteLine("Starting IoTEdgeService singleton");
 
-            Init().Wait();
+            Task.Run(() => this.Init()).Wait();
         }
 
         private async Task Init()
