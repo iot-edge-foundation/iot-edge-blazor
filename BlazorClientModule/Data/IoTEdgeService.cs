@@ -12,7 +12,7 @@ namespace BlazorEdgeModule.Edge
     {
         private ModuleClient ioTHubModuleClient;
 
-        private int counter = int.MinValue;
+        private int counter = 0;
 
         public IoTEdgeService()
         {
@@ -36,6 +36,46 @@ namespace BlazorEdgeModule.Edge
             await ioTHubModuleClient.OpenAsync();
 
             Console.WriteLine("IoTEdgeService intialized.");
+
+            await ioTHubModuleClient.SetInputMessageHandlerAsync("input1", PipeMessageInputOne, ioTHubModuleClient);
+
+            Console.WriteLine("Input1 handler attached");
+        }
+
+        public event EventHandler<string> InputMessageReceived;
+
+        private void OnInputMessageReceived(string messageString)
+        {
+            InputMessageReceived?.Invoke(this, messageString);
+        }
+
+        /// <summary>
+        /// EXPERIMENTAL; WORK IN PROGRESS
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="userContext"></param>
+        /// <returns></returns>
+        private async Task<MessageResponse> PipeMessageInputOne(Message message, object userContext)
+        {
+            var moduleClient = userContext as ModuleClient;
+            if (moduleClient == null)
+            {
+                throw new InvalidOperationException("UserContext doesn't contain " + "expected values");
+            }
+
+            byte[] messageBytes = message.GetBytes();
+            string messageString = Encoding.UTF8.GetString(messageBytes);
+
+            Console.WriteLine($"-> Received echo message: '{messageString}'");
+
+            if (!string.IsNullOrEmpty(messageString))
+            {
+                OnInputMessageReceived(messageString);
+
+                //      await Task.Delay(TimeSpan.FromSeconds(0)); // added just to make this method awaitable
+            }
+
+            return MessageResponse.Completed;
         }
 
         public async Task SendMessage()
@@ -66,5 +106,10 @@ namespace BlazorEdgeModule.Edge
         public int counter { get; set; }
 
         public DateTime timeStamp { get; set; }
+    }
+
+    public class InputMessageEventArgs : EventArgs
+    {
+        public string MessageString { get; set; }
     }
 }
