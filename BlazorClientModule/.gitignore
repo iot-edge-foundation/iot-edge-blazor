@@ -32,5 +32,7 @@ artifacts/
 .suo
 slnx.sqlite
 
+*.user
+
 [Bb]in/
 [Oo]bj/
