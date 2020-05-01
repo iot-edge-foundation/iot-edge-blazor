@@ -1,0 +1,26 @@
+﻿@page "/counter"
+
+@using BlazorEdgeModule.Edge
+@inject IoTEdgeService EdgeService
+
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+<button class="btn btn-primary" @onclick="Send">Send message</button>
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+    private async Task Send()
+    {
+        await EdgeService.SendMessage();
+    }
+}
