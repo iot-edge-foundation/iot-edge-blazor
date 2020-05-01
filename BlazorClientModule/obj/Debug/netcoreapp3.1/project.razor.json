@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\sande\\source\\repos\\BlazorClientModule\\BlazorClientModule.csproj",
+  "FilePath": "c:\\git\\iot-edge-blazor\\BlazorClientModule\\BlazorClientModule.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -21026,54 +21026,54 @@
   "RootNamespace": "BlazorClientModule",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\sande\\source\\repos\\BlazorClientModule\\Shared\\SurveyPrompt.razor",
+      "FilePath": "c:\\git\\iot-edge-blazor\\BlazorClientModule\\Shared\\SurveyPrompt.razor",
       "TargetPath": "Shared\\SurveyPrompt.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\sande\\source\\repos\\BlazorClientModule\\_Imports.razor",
-      "TargetPath": "_Imports.razor",
-      "FileKind": "componentImport"
-    },
-    {
-      "FilePath": "c:\\Users\\sande\\source\\repos\\BlazorClientModule\\Shared\\MainLayout.razor",
-      "TargetPath": "Shared\\MainLayout.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\sande\\source\\repos\\BlazorClientModule\\Pages\\FetchData.razor",
+      "FilePath": "c:\\git\\iot-edge-blazor\\BlazorClientModule\\Pages\\FetchData.razor",
       "TargetPath": "Pages\\FetchData.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\sande\\source\\repos\\BlazorClientModule\\Pages\\Counter.razor",
-      "TargetPath": "Pages\\Counter.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\sande\\source\\repos\\BlazorClientModule\\Pages\\Index.razor",
-      "TargetPath": "Pages\\Index.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\sande\\source\\repos\\BlazorClientModule\\Pages\\_Host.cshtml",
-      "TargetPath": "Pages\\_Host.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\sande\\source\\repos\\BlazorClientModule\\App.razor",
+      "FilePath": "c:\\git\\iot-edge-blazor\\BlazorClientModule\\App.razor",
       "TargetPath": "App.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\sande\\source\\repos\\BlazorClientModule\\Shared\\NavMenu.razor",
+      "FilePath": "c:\\git\\iot-edge-blazor\\BlazorClientModule\\Pages\\Counter.razor",
+      "TargetPath": "Pages\\Counter.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\git\\iot-edge-blazor\\BlazorClientModule\\Pages\\_Host.cshtml",
+      "TargetPath": "Pages\\_Host.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\git\\iot-edge-blazor\\BlazorClientModule\\Pages\\Index.razor",
+      "TargetPath": "Pages\\Index.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\git\\iot-edge-blazor\\BlazorClientModule\\Shared\\NavMenu.razor",
       "TargetPath": "Shared\\NavMenu.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\sande\\source\\repos\\BlazorClientModule\\Pages\\Error.razor",
+      "FilePath": "c:\\git\\iot-edge-blazor\\BlazorClientModule\\Pages\\Error.razor",
       "TargetPath": "Pages\\Error.razor",
       "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\git\\iot-edge-blazor\\BlazorClientModule\\Shared\\MainLayout.razor",
+      "TargetPath": "Shared\\MainLayout.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\git\\iot-edge-blazor\\BlazorClientModule\\_Imports.razor",
+      "TargetPath": "_Imports.razor",
+      "FileKind": "componentImport"
     }
   ],
   "SerializationFormat": "0.2"
