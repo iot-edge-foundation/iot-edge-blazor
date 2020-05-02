@@ -6,14 +6,14 @@ namespace BlazorEdgeModule.Edge
 {
     public class TimerService
     {
-        private System.Timers.Timer aTimer;
+        private Timer timer;
 
         public TimerService()
         {
-            aTimer = new System.Timers.Timer(5000);
-            aTimer.Elapsed += OnTimedEvent;
-            aTimer.AutoReset = true;
-            aTimer.Enabled = true;
+            timer = new Timer(5000);
+            timer.Elapsed += OnTimedEvent;
+            timer.AutoReset = true;
+            timer.Enabled = true;
         }
 
         private void OnTimedEvent(Object source, ElapsedEventArgs e)
