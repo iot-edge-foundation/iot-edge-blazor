@@ -1,48 +1,17 @@
 ﻿@page "/counter"
 
-@using BlazorEdgeModule.Edge
-@inject IoTEdgeService EdgeService
-
-@implements IDisposable
-
 <h1>Counter</h1>
 
 <p>Current count: @currentCount</p>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
-<button class="btn btn-primary" @onclick="Send">Send message</button>
-
-message: @MessageString
-
-@code {
-    string MessageString;
-
-    protected override void OnInitialized()
-    {
-        this.EdgeService.InputMessageReceived += OnInputMessageReceived;
-    }
-
-    public void Dispose()
-    {
-        this.EdgeService.InputMessageReceived -= OnInputMessageReceived;
-    }
-
-    private void OnInputMessageReceived(object sender, string messageString)
-    {
-        MessageString = messageString;
-        StateHasChanged();
-    }
-
+@code
+{
     private int currentCount = 0;
 
     private void IncrementCount()
     {
         currentCount++;
-    }
-
-    private async Task Send()
-    {
-        await EdgeService.SendMessage();
     }
 }

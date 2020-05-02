@@ -44,17 +44,11 @@ namespace BlazorEdgeModule.Edge
 
         public event EventHandler<string> InputMessageReceived;
 
-        private void OnInputMessageReceived(string messageString)
+        private async Task OnInputMessageReceived(string messageString)
         {
-            InputMessageReceived?.Invoke(this, messageString);
+            await Task.Run(() => { InputMessageReceived?.Invoke(this, messageString); });
         }
 
-        /// <summary>
-        /// EXPERIMENTAL; WORK IN PROGRESS
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="userContext"></param>
-        /// <returns></returns>
         private async Task<MessageResponse> PipeMessageInputOne(Message message, object userContext)
         {
             var moduleClient = userContext as ModuleClient;
@@ -66,14 +60,14 @@ namespace BlazorEdgeModule.Edge
             byte[] messageBytes = message.GetBytes();
             string messageString = Encoding.UTF8.GetString(messageBytes);
 
-            Console.WriteLine($"-> Received echo message: '{messageString}'");
+            Console.WriteLine($"-> Received message: '{messageString}'");
 
             if (!string.IsNullOrEmpty(messageString))
             {
-                OnInputMessageReceived(messageString);
-
-                //      await Task.Delay(TimeSpan.FromSeconds(0)); // added just to make this method awaitable
+                await OnInputMessageReceived(messageString);
             }
+
+            Console.WriteLine("Message handled");
 
             return MessageResponse.Completed;
         }
