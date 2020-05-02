@@ -1,9 +1,6 @@
 ﻿@page "/"
 
-@using BlazorEdgeModule.Edge
-@inject IoTEdgeService EdgeService
-
-@implements IDisposable
+@inherits IndexBase
 
 <h1>Hello, world!</h1>
 
@@ -14,31 +11,3 @@ Welcome to your new app.
 <button class="btn btn-primary" @onclick="Send">Send message</button>
 
 message: @message
-
-@code
-{
-    string message;
-
-    protected override void OnInitialized()
-    {
-        this.EdgeService.InputMessageReceived += OnInputMessageReceived;
-    }
-
-    void IDisposable.Dispose()
-    {
-        this.EdgeService.InputMessageReceived -= OnInputMessageReceived;
-    }
-
-    private void OnInputMessageReceived(object sender, string messageString)
-    {
-        Task.Run(()=> {
-            message = messageString;
-            this.StateHasChanged();
-        });
-    }
-
-    private async Task Send()
-    {
-        await EdgeService.SendMessage();
-    }
-}
