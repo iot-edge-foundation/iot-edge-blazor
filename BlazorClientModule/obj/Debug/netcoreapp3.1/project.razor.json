@@ -13,14 +13,14 @@
     "TagHelpers": [
       {
         "Kind": "Components.Component",
-        "Name": "BlazorClientModule.App",
+        "Name": "BlazorClientModule.Pages.IndexBase",
         "AssemblyName": "BlazorClientModule",
         "Documentation": null,
         "TagOutputHint": null,
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "App",
+            "TagName": "IndexBase",
             "ParentTag": null,
             "TagStructure": 0,
             "Attributes": [],
@@ -32,19 +32,19 @@
         "Diagnostics": [],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "BlazorClientModule.App"
+          "Common.TypeName": "BlazorClientModule.Pages.IndexBase"
         }
       },
       {
         "Kind": "Components.Component",
-        "Name": "BlazorClientModule.App",
+        "Name": "BlazorClientModule.Pages.IndexBase",
         "AssemblyName": "BlazorClientModule",
         "Documentation": null,
         "TagOutputHint": null,
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "BlazorClientModule.App",
+            "TagName": "BlazorClientModule.Pages.IndexBase",
             "ParentTag": null,
             "TagStructure": 0,
             "Attributes": [],
@@ -56,7 +56,7 @@
         "Diagnostics": [],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "BlazorClientModule.App",
+          "Common.TypeName": "BlazorClientModule.Pages.IndexBase",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -253,6 +253,55 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "BlazorClientModule.Pages.Index",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "Kind": "Components.Component",
+        "Name": "BlazorClientModule.App",
+        "AssemblyName": "BlazorClientModule",
+        "Documentation": null,
+        "TagOutputHint": null,
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "App",
+            "ParentTag": null,
+            "TagStructure": 0,
+            "Attributes": [],
+            "Diagnostics": []
+          }
+        ],
+        "BoundAttributes": [],
+        "AllowedChildTags": [],
+        "Diagnostics": [],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "BlazorClientModule.App"
+        }
+      },
+      {
+        "Kind": "Components.Component",
+        "Name": "BlazorClientModule.App",
+        "AssemblyName": "BlazorClientModule",
+        "Documentation": null,
+        "TagOutputHint": null,
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "BlazorClientModule.App",
+            "ParentTag": null,
+            "TagStructure": 0,
+            "Attributes": [],
+            "Diagnostics": []
+          }
+        ],
+        "BoundAttributes": [],
+        "AllowedChildTags": [],
+        "Diagnostics": [],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "BlazorClientModule.App",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
