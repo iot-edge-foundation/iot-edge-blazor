@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Timers;
 
 namespace BlazorEdgeModule.Edge
 {
-    public class CounterService
+    public class TimerService
     {
         private System.Timers.Timer aTimer;
 
-        public CounterService()
+        public TimerService()
         {
             aTimer = new System.Timers.Timer(5000);
             aTimer.Elapsed += OnTimedEvent;
@@ -18,16 +16,16 @@ namespace BlazorEdgeModule.Edge
             aTimer.Enabled = true;
         }
 
-        private async void OnTimedEvent(Object source, ElapsedEventArgs e)
+        private void OnTimedEvent(Object source, ElapsedEventArgs e)
         {
-            await OnInputMessageReceived("Message at " + DateTime.Now);
+            OnInputMessageReceived("Message at " + DateTime.Now);
         }
 
         public event EventHandler<string> InputMessageReceived;
 
-        private async Task OnInputMessageReceived(string messageString)
+        private void OnInputMessageReceived(string messageString)
         {
-            await Task.Run(() => { InputMessageReceived?.Invoke(this, messageString); });
+            InputMessageReceived?.Invoke(this, messageString);
         }
 
         public async Task SendMessage()
