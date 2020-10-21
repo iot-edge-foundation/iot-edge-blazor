@@ -88,6 +88,9 @@ namespace BlazorEdgeModule.Edge
 
             using (var message = new Message(Encoding.UTF8.GetBytes(json)))
             {
+                message.ContentType = "application/json";
+                message.ContentEncoding = "utf-8";
+                    
                 await ioTHubModuleClient.SendEventAsync("output1", message);
 
                 Console.WriteLine("Message sent");
